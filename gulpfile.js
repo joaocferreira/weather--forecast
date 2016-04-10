@@ -46,6 +46,9 @@ gulp.task('browserify', function() {
         })
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('./app/scripts'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 })
 
 gulp.task('copy', function() {
@@ -59,10 +62,10 @@ gulp.task('uglify', function() {
         .pipe(gulp.dest('./dist/scripts'))
 });
 
-gulp.task('dev', ['server--dev', 'sass'], function() {
+gulp.task('dev', ['server--dev', 'sass', 'browserify'], function() {
     gulp.watch('./app/styles/*.scss', ['sass']);
     gulp.watch('./app/*.html', browserSync.reload);
-    gulp.watch('./app/scripts/*js', browserSync.reload);
+    gulp.watch('./app/scripts/*.js', ['browserify']);
 })
 
 gulp.task('build', ['sass', 'browserify', 'cleanCSS', 'copy', 'uglify', 'server--dist']);
