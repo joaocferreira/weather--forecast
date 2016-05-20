@@ -17,7 +17,7 @@ gulp.task('sass', function() {
     }))
 });
 
-gulp.task('cleanCSS', function() {
+gulp.task('cleanCSS', ['sass'], function() {
   return gulp.src('./app/styles/main.css')
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/styles'))
@@ -55,7 +55,7 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('./dist'))
 });
 
-gulp.task('uglify', function() {
+gulp.task('uglify', ['browserify'], function() {
   return gulp.src('./app/scripts/bundle.js')
     .pipe(uglify())
     .pipe(gulp.dest('./dist/scripts'))
