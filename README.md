@@ -1,17 +1,14 @@
-# base_generator
+# Wheater--forecast
 
 ___
 
 ### Steps
 
-1. git clone https://github.com/joaocferreira/base_generator.git
-2. change name on package.json
-3. git remote rm origin
-4. git remote add origin {{new url}}
+1. git clone https://github.com/joaocferreira/wheather--forecast.git
+2. cd wheather--forecast
+3. nvm use
+4. npm install gulp -g
 5. npm install
-6. gulp dev
+6. gulp dev or gulp build
+7. *Be amazed!*
 
-
-
-
-![cat-ready](http://www.catgifpage.com/gifs/318.gif)

@@ -2,12 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello!</title>
-    <script type="text/javascript" src="scripts/bundle.js"></script>
+    <title>Wheather in ...</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
   <body>
-    <div id="container"></div>
-    <h1>Hello!</h1>
+    <div class="container">
+      <div class="row">
+        <form class="col s12" id="form__city">
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m2">
+              <input type="text" class="form__city--input" placeholder="Type city name ..." id="input__city">
+            </div>
+            <button id="form__city--btn" class="form__city--btn btn-large waves-effect waves-light col m2 s12" type="submit" name="action">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="row" id="results">
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/bundle.js"></script>
   </body>
 </html>
